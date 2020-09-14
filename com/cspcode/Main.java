@@ -7,7 +7,7 @@ public class Main { // The Main class is the main entry point for any Java progr
   public static void main(String[] args) { // main is a method in the Main class
     System.out.println("Hello, world!"); // System.out.println(); prints to the console
 
-    /* Primitive Data Types */
+    /* Primitive Data Types: basic types of data */
     byte numberInBytes = -128;        // 1 byte.  Minimum value of -128, maximum value of 127(inclusive).
     short shortNumber = 32_767;       // 2 bytes. Minimum value of -32768, max of 32767.
     int number = 100;                 // 4 bytes. Integer, Max value of 4,294,967,295.
@@ -18,9 +18,12 @@ public class Main { // The Main class is the main entry point for any Java progr
     boolean yes = true;               // 1 bit.   True/false values only.
     boolean no = false;
 
-    /* Reference Data Types */
-    String name = new String("CspCode"); // Sequence of chars.
-    LocalDate now = LocalDate.now();             // LocalDate object, with additional methods.
+    /* Reference Data Types: instantiable class as well as arrays */
+    String name = new String("CspCode");            // Sequence of chars.
+    LocalDate now = LocalDate.now();                        // LocalDate object, with additional methods.
+    String[] cars = { "Volvo", "Subaru", "BMW", "Nissan" }; // Array of strings.
+    int[] numbers = { 1, 2, 3, 4, 5 };                      // Array of integers.
+    int[][] multiDimensionalArrayOfNumbers = { { 1, 2, 3 }, { 4, 5, 6 } };
   }
 }
 
