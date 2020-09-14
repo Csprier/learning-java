@@ -19,11 +19,12 @@ public class Main { // The Main class is the main entry point for any Java progr
     boolean no = false;
 
     /* Reference Data Types: instantiable class as well as arrays */
-    String name = new String("CspCode");                            // Sequence of chars.
-    LocalDate now = LocalDate.now();                                        // LocalDate object, with additional methods.
-    String[] cars = { "Volvo", "Subaru", "BMW", "Nissan" };                 // Array of strings.
-    int[] numbers = { 1, 2, 3, 4, 5 };                                      // Array of integers.
-    int[][] multiDimensionalArrayOfNumbers = { { 1, 2, 3 }, { 4, 5, 6 } };  // Multi-dimensional Array.
+    String name = new String("CspCode");                                      // Sequence of chars.
+    LocalDate now = LocalDate.now();                                                  // LocalDate object, with additional methods.
+    String[] cars = { "Volvo", "Subaru", "BMW", "Nissan" };                           // Array of strings.
+    String[][] multiDimensionalArrayOfStrings = { { "Chevy", "Ford" }, { "Lexus" } }; // Multi-dimensional Array.
+    int[] numbers = { 1, 2, 3, 4, 5 };                                                // Array of integers.
+    int[][] multiDimensionalArrayOfNumbers = { { 1, 2, 3 }, { 4, 5, 6 } };            // Multi-dimensional Array.
   }
 }
 
