@@ -4,8 +4,8 @@ import java.time.LocalDate;
 
 public class Main { // The Main class is the main entry point for any Java program
 
-  public static void main(String[] args) { // main is a method in the Main class
-    System.out.println("Hello, world!"); // System.out.println(); prints to the console
+  public static void main(String[] args) { // main is a method in the Main class, it takes an array of Strings[] as arguments(args).
+    System.out.println("Hello, world!"); // System.out.println(); prints to the console.
 
     /* Primitive Data Types: basic types of data */
     byte numberInBytes = -128;        // 1 byte.  Minimum value of -128, maximum value of 127(inclusive).
@@ -25,6 +25,40 @@ public class Main { // The Main class is the main entry point for any Java progr
     String[][] multiDimensionalArrayOfStrings = { { "Chevy", "Ford" }, { "Lexus" } }; // Multi-dimensional Array.
     int[] numbers = { 1, 2, 3, 4, 5 };                                                // Array of integers.
     int[][] multiDimensionalArrayOfNumbers = { { 1, 2, 3 }, { 4, 5, 6 } };            // Multi-dimensional Array.
+
+
+    /* Reference Types explained
+      When you run main(), this will output:
+      :  Before changing Meelo
+      :  Meelo :: Meelo
+      :  After changing Meelo
+      :  Master Meelo :: Master Meelo
+      This is because 'line 44' is altering the original memory address, therefore the reference will be updated to reflect this change.
+      Conversely, were you to change 'line 44' to 'Tenzen.name = "Tenzen"', this will change the original reference, and 'line 49' will output:
+      :  Master Tenzen :: Master Tenzen
+      Because the reference to the original was updated.
+    */
+    Person Meelo = new Person("Meelo");
+    Person Tenzen = Meelo;
+
+    System.out.println("Before changing Meelo");
+    System.out.println(Meelo.name + " :: " + Tenzen.name);
+
+//    Meelo.name = "Master Meelo";
+    Tenzen.name = "Master Tenzen";
+
+    System.out.println("After changing Meelo");
+    System.out.println(Meelo.name + " :: " + Tenzen.name);
+
+  }
+
+  /*  */
+  static class Person {
+    String name;
+    Person(String name) {
+      this.name = name;
+    }
+
   }
 }
 
