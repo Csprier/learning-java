@@ -7,6 +7,7 @@ public class Main { // The Main class is the main entry point for any Java progr
   public static void main(String[] args) { // main is a method in the Main class, it takes an array of Strings[] as arguments(args).
     System.out.println("Hello, world!"); // System.out.println(); prints to the console.
 
+    /* ========================================================================================== */
     /* Primitive Data Types: basic types of data */
     byte numberInBytes = -128;        // 1 byte.  Minimum value of -128, maximum value of 127(inclusive).
     short shortNumber = 32_767;       // 2 bytes. Minimum value of -32768, max of 32767.
@@ -26,7 +27,7 @@ public class Main { // The Main class is the main entry point for any Java progr
     int[] numbers = { 1, 2, 3, 4, 5 };                                                // Array of integers.
     int[][] multiDimensionalArrayOfNumbers = { { 1, 2, 3 }, { 4, 5, 6 } };            // Multi-dimensional Array.
 
-
+    /* ========================================================================================== */
     /* Reference Types explained
       When you run main(), this will output:
       :  Before changing Meelo
@@ -43,22 +44,29 @@ public class Main { // The Main class is the main entry point for any Java progr
 
     System.out.println("Before changing Meelo");
     System.out.println(Meelo.name + " :: " + Tenzen.name);
-
 //    Meelo.name = "Master Meelo";
     Tenzen.name = "Master Tenzen";
-
     System.out.println("After changing Meelo");
     System.out.println(Meelo.name + " :: " + Tenzen.name);
 
+    /* ========================================================================================== */
+    /* String Class
+    *  Declaration: String(<Class>) nameOfVariable = "Object of type String";
+    * */
+    char a = 'A';
+    /* char b = 'Bb'; <-- This will cause an error, because the 'char' data type only allows you to have a single value! */
+    String b = "Bb";
+    String avatar = new String("Korra");
+    System.out.println(avatar.toUpperCase()); // .toUpperCase() method used from the String class' list of methods.
   }
 
+  /* ========================================================================================== */
   /*  */
   static class Person {
     String name;
     Person(String name) {
       this.name = name;
     }
-
   }
 }
 
