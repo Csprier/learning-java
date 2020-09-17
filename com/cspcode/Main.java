@@ -42,11 +42,11 @@ public class Main { // The Main class is the main entry point for any Java progr
     Person Meelo = new Person("Meelo");
     Person Tenzen = Meelo;
 
-    System.out.println("Before changing Meelo");
+    System.out.println("Before changing Meelo.name");
     System.out.println(Meelo.name + " :: " + Tenzen.name);
 //    Meelo.name = "Master Meelo";
     Tenzen.name = "Master Tenzen";
-    System.out.println("After changing Meelo");
+    System.out.println("After changing Meelo.name");
     System.out.println(Meelo.name + " :: " + Tenzen.name);
 
     /* ========================================================================================== */
@@ -58,6 +58,9 @@ public class Main { // The Main class is the main entry point for any Java progr
     String b = "Bb";
     String avatar = new String("Korra");
     System.out.println(avatar.toUpperCase()); // .toUpperCase() method used from the String class' list of methods.
+    System.out.println(avatar.toLowerCase());
+    System.out.println(avatar.charAt(0)); // .charAt(@Range int index); Returns the char value at the specified index.
+    System.out.println(avatar.contains("or")); // .contains checks if the specific string exists in the variable.
   }
 
   /* ========================================================================================== */
