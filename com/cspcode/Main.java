@@ -8,6 +8,11 @@ public class Main { // The Main class is the main entry point for any Java progr
     System.out.println("Hello, world!"); // System.out.println(); prints to the console.
 
     /* ========================================================================================== */
+    /* Declaring variables: <Data Type> <nameOfVariable> = value;
+     * Variables begin with lowercase letters.
+     * Classes begin with uppercase letters.
+     * e.g. String(Class) nameOfVariable(variable) = "value";
+     */
     /* Primitive Data Types: basic types of data */
     byte numberInBytes = -128;        // 1 byte.  Minimum value of -128, maximum value of 127(inclusive).
     short shortNumber = 32_767;       // 2 bytes. Minimum value of -32768, max of 32767.
@@ -51,8 +56,8 @@ public class Main { // The Main class is the main entry point for any Java progr
 
     /* ========================================================================================== */
     /* String Class
-    *  Declaration: String(<Class>) nameOfVariable = "Object of type String";
-    * */
+     *  Declaration: String(<Class>) nameOfVariable = "Object of type String";
+     */
     char a = 'A';
     /* char b = 'Bb'; <-- This will cause an error, because the 'char' data type only allows you to have a single value! */
     String b = "Bb";
@@ -61,6 +66,10 @@ public class Main { // The Main class is the main entry point for any Java progr
     System.out.println(avatar.toLowerCase());
     System.out.println(avatar.charAt(0)); // .charAt(@Range int index); Returns the char value at the specified index.
     System.out.println(avatar.contains("or")); // .contains checks if the specific string exists in the variable.
+    /* Alternatively, the same as 'line 63' would be:
+     * String whatIWantToFind = "or";
+     * System.out.println(avatar.contains(whatIWantToFind));
+     */
   }
 
   /* ========================================================================================== */
