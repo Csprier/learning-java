@@ -7,6 +7,11 @@ public class Main { // The Main class is the main entry point for any Java progr
 
   public static void main(String[] args) { // main is a method in the Main class, it takes an array of Strings[] as arguments(args).
     System.out.println("Hello, world!"); // System.out.println(); prints to the console.
+    /* ========================================================================================== */
+    /* Reserved Keywords:
+     * Keywords like 'static', 'public', 'void', 'final', 'class' and others, are reserved;
+     * There can be no variables/classes/etc with the same name as a reserved keyword.
+     */
 
     /* ========================================================================================== */
     /* Declaring variables: <Data Type> <nameOfVariable> = value;
