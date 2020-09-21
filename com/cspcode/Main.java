@@ -72,9 +72,18 @@ public class Main { // The Main class is the main entry point for any Java progr
     System.out.println(avatar.toLowerCase());
     System.out.println(avatar.charAt(0)); // .charAt(@Range int index); Returns the char value at the specified index.
     System.out.println(avatar.contains("or")); // .contains checks if the specific string exists in the variable.
-    /* Alternatively, the same as 'line 63' would be:
+    /* Used with a variable:
      * String whatIWantToFind = "or";
      * System.out.println(avatar.contains(whatIWantToFind));
+     */
+
+    /* ========================================================================================== */
+    /* Arithmetic Operators, PEMDAS applies.
+      + (Add)
+      - (Subtract)
+      / (Divide)
+      * (Multiply)
+      % (Modulus) - remainder
      */
 
     /* ========================================================================================== */
