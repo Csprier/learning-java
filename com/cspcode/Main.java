@@ -1,6 +1,7 @@
-package com.cspcode;
+package com.cspcode; // This is the package we are in.
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Main { // The Main class is the main entry point for any Java program
 
@@ -70,6 +71,23 @@ public class Main { // The Main class is the main entry point for any Java progr
      * String whatIWantToFind = "or";
      * System.out.println(avatar.contains(whatIWantToFind));
      */
+
+    /* ========================================================================================== */
+    /* Date .util vs .sql, also .time
+     * Initially, with intellisense, when you type "Date" you can select .util or .sql, or .time; which are different packages.
+     * .util - non-database Date needs
+     * .sql - database Date needs
+     */
+    Date date = new Date(); // .util
+    System.out.println(date);
+    /* SQL
+     * java.sql.Date date2 = new java.sql.now();
+     * .sql, but requires an explicit 'import java.sql.Date',
+     * because 'java.util.Date' is a class of the same name.
+     */
+     // System.out.println(date2);
+
+
   }
 
   /* ========================================================================================== */
@@ -82,8 +100,7 @@ public class Main { // The Main class is the main entry point for any Java progr
   }
 }
 
-/*
-==================================================================================================
+/* ==================================================================================================
  * Running(Compiling) a Java program from the terminal *
  --------------------------------------------
   From the 'src' directory
@@ -92,5 +109,4 @@ public class Main { // The Main class is the main entry point for any Java progr
   Second, from the same directory, run "$ java <fully qualified name>"
   e.g.
   "$ java com.cspcode.Main" <-- this invokes the 'Main.class' file, not the 'Main.java' file
-==================================================================================================
-*/
+================================================================================================== */
