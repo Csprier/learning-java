@@ -15,8 +15,7 @@ package com.cspcode.datastructures;
                                  }
                  }
  }
- * Insert: Creates a new_node, scans the list for the current last node, and add the new_node, increment length++
- */
+*/
 
 public class LinkedList {
   Node head;
