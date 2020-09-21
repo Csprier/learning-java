@@ -55,7 +55,7 @@ public class Main { // The Main class is the main entry point for any Java progr
 
     System.out.println("Before changing Meelo.name");
     System.out.println(Meelo.name + " :: " + Tenzen.name);
-//    Meelo.name = "Master Meelo";
+    // Meelo.name = "Master Meelo";
     Tenzen.name = "Master Tenzen";
     System.out.println("After changing Meelo.name");
     System.out.println(Meelo.name + " :: " + Tenzen.name);
@@ -84,7 +84,14 @@ public class Main { // The Main class is the main entry point for any Java progr
       / (Divide)
       * (Multiply)
       % (Modulus) - remainder
+
+       Math Class: Allows you to run additional operations on numbers
+      e.g.
+      Math.abs(); // absolute, turns a negative int to positive
+      Math.max(3.6, 10.11); // max number between the two parameters, also does whole numbers
      */
+    System.out.println(Math.abs(-10)); // 10
+    System.out.println(Math.max(6, 10)); // 10
 
     /* ========================================================================================== */
     /* Date .util vs .sql, also .time
