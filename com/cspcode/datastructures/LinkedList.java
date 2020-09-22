@@ -18,6 +18,7 @@ package com.cspcode.datastructures;
 */
 
 public class LinkedList {
+
   Node head;
   Node tail;
   int length;
@@ -31,6 +32,7 @@ public class LinkedList {
 
   // Node Class
   static class Node {
+
     int data;
     Node next;
 
@@ -48,8 +50,7 @@ public class LinkedList {
       head = newNode;
       tail = newNode;
       length++;
-    }
-    else {
+    } else {
       tail.next = newNode;
       tail = newNode;
       length++;
@@ -65,7 +66,7 @@ public class LinkedList {
       return;
     }
     System.out.println("Nodes of the Singly Linked List:");
-    while(current != null) {
+    while (current != null) {
       System.out.println(current.data + " ");
       current = current.next;
     }
