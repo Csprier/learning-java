@@ -17,8 +17,8 @@ public class DoublyLinkedList {
   // Node Class
   static class Node {
     int data;
-    Node next;
     Node previous;
+    Node next;
 
     public Node(int data) {
       this.data = data;
@@ -27,36 +27,27 @@ public class DoublyLinkedList {
 
   // Create the head and tail of the D.LinkedList
   Node head;
-  Node tail;
 
   // DLL Constructor
   DoublyLinkedList() {
     head = null;
-    tail = null;
   }
 
   // ===============================================================================================
   /* INSERT FIRST ---------------------------
    * @param int data
    */
-  public void insertFirst(int data) {
+  public void insertAtTheStart(int data) {
     Node newNode = new Node(data);
 
-    // if the head of the list exists, set head.previous to the newNode making the newNode the old
-    // head's previous
-    if (head != null) {
+    newNode.next = head;
+    newNode.previous = null;
+
+    if(head != null) {
       head.previous = newNode;
     }
 
-    // set the head to the newNode
     head = newNode;
-
-    // if the tail does not exist, it becomes the newNode
-    if (tail == null) {
-      tail = newNode;
-    }
-
-    System.out.println("Inserting " + data + " at the start of the list!");
   }
 
   // ===============================================================================================
@@ -65,14 +56,6 @@ public class DoublyLinkedList {
    */
   public void insertLast(int data) {
     Node newNode = new Node(data);
-
-    // If the tail exists, tail.next becomes the newNode; making it the next in the list
-    if (tail != null) {
-      tail.next = newNode;
-    }
-
-    // set tail to the newNode
-    tail = newNode;
 
     // if the head does not exist, i.e. the list is empty, set the head to the newNode
     if (head == null) {
@@ -98,10 +81,10 @@ public class DoublyLinkedList {
     // currentNode becomes the old currentNode's next value
     while((counter != index) && (currentNode.next != null)) {
       counter++;
-      System.out.println("Current: " + ObjectUtils.deserializeObjectToString(currentNode));
-      System.out.println("Previous: " + ObjectUtils.deserializeObjectToString(previousNode));
-//      System.out.println("cn.n: " + currentNode.data + ", " + currentNode.previous + ", " + currentNode.next);
+      previousNode = currentNode;
+      currentNode = currentNode.next;
     }
+    previousNode.next = newNode;
   }
 
   // ===============================================================================================
@@ -126,13 +109,15 @@ public class DoublyLinkedList {
   public static void main(String[] args) {
     DoublyLinkedList dLList = new DoublyLinkedList();
 
-    dLList.insertFirst(0);
-    dLList.insertLast(2);
-    dLList.insertLast(3);
-    dLList.insertLast(4);
-    dLList.insertLast(5);
-    dLList.insertAt(1, 1);
+    dLList.insertAtTheStart(1);
+    dLList.insertAtTheStart(0);
+//    dLList.insertLast(2);
+//    dLList.insertLast(3);
+//    dLList.insertLast(4);
+//    dLList.insertLast(5);
+//    dLList.insertAt(1, 1);
 
     dLList.printList();
+//    System.out.println(ObjectUtils.deserializeObjectToString(dLList));
   }
 }

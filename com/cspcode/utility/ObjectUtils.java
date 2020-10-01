@@ -5,7 +5,7 @@ import com.google.gson.GsonBuilder;
 
 public class ObjectUtils {
 
-  private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+  private static final Gson GSON = new GsonBuilder().serializeNulls().setPrettyPrinting().create();
 
   private ObjectUtils() {
     throw new UnsupportedOperationException("Instantiation of this class is not permitted in case you are using reflection.");
