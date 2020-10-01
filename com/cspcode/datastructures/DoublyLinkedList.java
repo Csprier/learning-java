@@ -1,31 +1,138 @@
 package com.cspcode.datastructures;
 
+import com.cspcode.utility.ObjectUtils;
+
+/*
+------------------------------------------------
+  null <- [ 1 (Head) ] <--> [ 2 ] <--> [ 3 ] <--> [ 4 (Tail) ] -> null;
+------------------------------------------------
+(Head) Node { data: 1; next: Node { data 2 }; previous: null;             };
+       Node { data: 2; next: Node { data 3 }; previous: Node { data: 1 }; };
+       Node { data: 3; next: Node { data 4 }; previous: Node { data: 2 }; };
+(Tail) Node { data: 4; next: null;            previous: Node { data: 3 }; }
+*/
 
 public class DoublyLinkedList {
-  Node head;
-  Node tail;
-
-  // DoublyLinkedList constructor
-  public DoublyLinkedList() {
-    head = null;
-    tail = null;
-  }
 
   // Node Class
   static class Node {
     int data;
-    DoublyLinkedList.Node next;
-    DoublyLinkedList.Node previous;
+    Node next;
+    Node previous;
 
     public Node(int data) {
       this.data = data;
-      this.next = null;
-      this.previous = null;
     }
   }
 
-  // INSERT FIRST
-  public static void insertFirst(Node node) {
+  // Create the head and tail of the D.LinkedList
+  Node head;
+  Node tail;
 
+  // DLL Constructor
+  DoublyLinkedList() {
+    head = null;
+    tail = null;
+  }
+
+  // ===============================================================================================
+  /* INSERT FIRST ---------------------------
+   * @param int data
+   */
+  public void insertFirst(int data) {
+    Node newNode = new Node(data);
+
+    // if the head of the list exists, set head.previous to the newNode making the newNode the old
+    // head's previous
+    if (head != null) {
+      head.previous = newNode;
+    }
+
+    // set the head to the newNode
+    head = newNode;
+
+    // if the tail does not exist, it becomes the newNode
+    if (tail == null) {
+      tail = newNode;
+    }
+
+    System.out.println("Inserting " + data + " at the start of the list!");
+  }
+
+  // ===============================================================================================
+  /* INSERT LAST ---------------------------
+   * @param int data
+   */
+  public void insertLast(int data) {
+    Node newNode = new Node(data);
+
+    // If the tail exists, tail.next becomes the newNode; making it the next in the list
+    if (tail != null) {
+      tail.next = newNode;
+    }
+
+    // set tail to the newNode
+    tail = newNode;
+
+    // if the head does not exist, i.e. the list is empty, set the head to the newNode
+    if (head == null) {
+      head = newNode;
+    }
+
+    System.out.println("Inserting " + data + " at the end of the list!");
+  }
+
+  // ===============================================================================================
+  /* INSERT AT ---------------------------
+   * @param int data
+   */
+  public void insertAt(int data, int index) {
+    Node newNode = new Node(data);
+    int counter = 0;
+    Node currentNode = head;
+    Node previousNode = head;
+
+    // while the counter is not the index and the currentNode is not the last in the list
+    // increment the counter by 1
+    // previousNode becomes the new currentNode in the iteration
+    // currentNode becomes the old currentNode's next value
+    while((counter != index) && (currentNode.next != null)) {
+      counter++;
+      System.out.println("Current: " + ObjectUtils.deserializeObjectToString(currentNode));
+      System.out.println("Previous: " + ObjectUtils.deserializeObjectToString(previousNode));
+//      System.out.println("cn.n: " + currentNode.data + ", " + currentNode.previous + ", " + currentNode.next);
+    }
+  }
+
+  // ===============================================================================================
+  // PRINT LIST
+  public void printList() {
+    Node current = head;
+
+    if (head == null) {
+      System.out.println("The list is empty!");
+      return;
+    }
+
+    System.out.println("--------------------------------");
+    System.out.println("Nodes of the Doubly Linked List:");
+    while (current != null) {
+      System.out.println(current.data + " ");
+      current = current.next;
+    }
+  }
+
+  // MAIN
+  public static void main(String[] args) {
+    DoublyLinkedList dLList = new DoublyLinkedList();
+
+    dLList.insertFirst(0);
+    dLList.insertLast(2);
+    dLList.insertLast(3);
+    dLList.insertLast(4);
+    dLList.insertLast(5);
+    dLList.insertAt(1, 1);
+
+    dLList.printList();
   }
 }
